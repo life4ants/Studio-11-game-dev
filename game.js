@@ -42,7 +42,7 @@ tiles[2] = { x: 15, y: 0, w: 15, h: 15};
 
 
 bgImage.onload = () =>{
-	bgReady = true;
+		bgReady = true;
 
 };
 mImage.onload = () =>{
