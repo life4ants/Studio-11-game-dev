@@ -131,7 +131,9 @@ var updateMarioPosition = () => {
 	}
 
 	if (goingUp) {
-		if (dyM <= platformY - 120 || level[nx][ny]) {
+		
+		// iisupreme 26/04/2017 - Add further collision detection when Mario jumps up
+		if (dyM <= platformY - 120 || level[nx][ny] || level[nx][ny + 1]) {
 			goingUp = false;
 			goingDown = true;
 		} else {
@@ -140,7 +142,8 @@ var updateMarioPosition = () => {
 	}
 
 	if (!goingUp) {
-		if (dyM >= 0 || level[nx + 1][ny + 1]) {
+		// iisupreme 26/04/2017 - Add further collision detection when Mario jumps down
+		if (dyM >= 0 || level[nx + 1][ny + 1] || level[nx + 1][ny]) {
 			goingUp = false;
 			goingDown = false;
 			platformY = dyM;
